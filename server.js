@@ -16,6 +16,7 @@ app.ws('/', (ws, req) => {
 
 app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'))
 
-app.listen(80)
-
+if(process.argv.length > 2)
+	app.listen(process.argv[2])
+else console.log('node server.js 80')
 

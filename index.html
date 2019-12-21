@@ -1,6 +1,6 @@
 <textarea id='text' style='width:100%;height:100%;overflow-y:scroll;'></textarea>
 <script>
-	let ws = new WebSocket('ws://ie.dyndns.biz')
+	let ws = new WebSocket('ws://' + window.location.host)
 	ws.onopen = () => console.log('script loaded')
 	ws.onmessage = msg => {
 		const data = JSON.parse(msg.data)
